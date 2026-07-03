@@ -36,6 +36,7 @@ h3{
     /*height: 600px;
     width: 600px;*/
     gap:30px;
+    margin-top: 45px;
 }
 .choice{
     display: flex;
@@ -60,6 +61,8 @@ button {
 }
 button:hover {
     border: 5px solid black; 
+    transform: scale(1.08);
+    transition: 0.2s;
     /*border-color: black;*/
     cursor:pointer;
 }
@@ -77,4 +80,56 @@ img {
     gap:150px;
     font-size: 3rem;
     margin-top: 28px;
+}
+.curr-result{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#result-msg{
+    background-color: rgb(6, 6, 24);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.draw{
+    background-color: gray;
+    color: white;
+}
+
+.win{
+    background-color: green;
+    color: white;
+}
+
+.lose{
+    background-color: red;
+    color: white;
+}
+/* result feedback states */
+#result-msg.win{
+    background-color: rgb(20, 130, 20);
+    animation: pop 0.5s ease;
+}
+#result-msg.lose{
+    background-color: rgb(150, 20, 20);
+    animation: shake 0.5s ease;
+}
+#result-msg.draw{
+    background-color: rgb(155, 155, 192);
+}
+
+@keyframes pop{
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+@keyframes shake{
+    0%, 100% { transform: translateX(0); }
+    25%  { transform: translateX(-8px); }
+    75%  { transform: translateX(8px); }
 }
